@@ -481,8 +481,8 @@ class Dcode < Formula
   end
 
   resource "quickjs-rs" do
-    url "https://files.pythonhosted.org/packages/61/34/1b63bc3db8d950139618d1d38eff5648e5aaa53b2982da5ec121fcf72c63/quickjs_rs-0.2.4.tar.gz"
-    sha256 "7226d18bfa05d97fd629348b7d71512dab4da12bfbe29bdd50486bfc10858cc9"
+    url "https://files.pythonhosted.org/packages/9d/5f/38a30bdfc4fd0a369f1cfe394ea51fbb43a7e492ffe4006f212d24ab05c5/quickjs_rs-0.2.4-py3-none-any.whl"
+    sha256 "3b497b712c4e94401d5617a4c5808b290e2d6bac8e147b315e880306145ae734"
   end
 
   resource "referencing" do
