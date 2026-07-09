@@ -1,15 +1,13 @@
-# dcode-tap
+# homebrew-dcode
 
 Homebrew tap for [`dcode`](https://docs.langchain.com/oss/python/deepagents/code/overview) (Deep Agents Code) — the terminal-based AI coding agent built on LangChain's Deep Agents SDK, published to PyPI as [`deepagents-code`](https://pypi.org/project/deepagents-code/).
 
 ## Install
 
 ```sh
-brew tap pokryfka/dcode-tap https://github.com/pokryfka/dcode-tap
+brew tap pokryfka/dcode
 brew install dcode
 ```
-
-(This repository isn't named `homebrew-dcode-tap`, so the short form `brew tap pokryfka/dcode-tap` won't resolve on its own — pass the full URL as shown above, or rename the repo to `homebrew-dcode-tap` to enable the short form.)
 
 ## Usage
 
