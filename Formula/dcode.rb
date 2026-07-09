@@ -654,8 +654,26 @@ class Dcode < Formula
   end
 
   resource "wasmtime" do
-    url "https://files.pythonhosted.org/packages/47/08/cc1b66560214169ceaa8a241d9fa72c03e7a37e36db278bb956437164d12/wasmtime-46.0.1.tar.gz"
-    sha256 "0da0388c21bc0f0e633c7a30f2b7939a657f5019258c9a3a63fd37298a0dbb8b"
+    on_macos do
+      on_arm do
+        url "https://files.pythonhosted.org/packages/80/5b/54c773acaf90d8f82ec8476d96001fce84f9378dfd35ff3f062eb3d48a7a/wasmtime-46.0.1-py3-none-macosx_11_0_arm64.whl"
+        sha256 "de1a69573a173b5171f9413bcf0b88f4fed2721ed02c842fc25de5358730ccdf"
+      end
+      on_intel do
+        url "https://files.pythonhosted.org/packages/c2/34/8e3aedf1b3feb329d92f477d0c9e93b36f4551315fd1394023841dd2f4ad/wasmtime-46.0.1-py3-none-macosx_10_13_x86_64.whl"
+        sha256 "9b46c546bf73ece2600403db7dc604c3ef12046ccf2fabe07d7bfaa00453ce8b"
+      end
+    end
+    on_linux do
+      on_arm do
+        url "https://files.pythonhosted.org/packages/44/13/e2ec64f8d40380379567eda2f5976c1587d7a4e03f22e79ebc9a3b271d54/wasmtime-46.0.1-py3-none-manylinux2014_aarch64.whl"
+        sha256 "841b53fc17eedabaa6deb1e062a04a0a8953908d540fadb4149bc55c3f6d3e50"
+      end
+      on_intel do
+        url "https://files.pythonhosted.org/packages/66/6e/04593825386a9135e6cdd89b9910adddf2cbbb82eb4105cedb3c73824fe7/wasmtime-46.0.1-py3-none-manylinux1_x86_64.whl"
+        sha256 "e53c65abe31aeeb19a3f794b6e53140d401c4c79ad91c89caefdc502ee2b10c1"
+      end
+    end
   end
 
   resource "watchfiles" do
