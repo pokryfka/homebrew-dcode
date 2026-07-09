@@ -8,7 +8,13 @@ class Dcode < Formula
   license "MIT"
 
   depends_on "rust" => :build
+  depends_on "freetype"
+  depends_on "jpeg-turbo"
   depends_on "python@3.12"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   resource "agent-client-protocol" do
     url "https://files.pythonhosted.org/packages/6c/93/396d02c91b387b2678f23081869ca47bd495fc6c78789022c683180cf5f1/agent_client_protocol-0.11.0.tar.gz"
