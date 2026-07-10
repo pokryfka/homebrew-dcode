@@ -23,10 +23,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: Homebrew/actions/setup-homebrew@master
+      - uses: Homebrew/actions/setup-homebrew@main
+
+      - name: Tap this checkout as a local tap
+        run: brew tap pokryfka/dcode "${GITHUB_WORKSPACE}"
 
       - name: brew install --build-from-source
-        run: brew install --build-from-source --verbose "${GITHUB_WORKSPACE}/Formula/dcode.rb"
+        run: brew install --build-from-source --verbose dcode
 
       - name: brew test
         run: brew test --verbose dcode
