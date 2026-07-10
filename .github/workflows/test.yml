@@ -1,0 +1,32 @@
+name: brew test
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Formula/**"
+      - ".github/workflows/test.yml"
+  pull_request:
+    paths:
+      - "Formula/**"
+      - ".github/workflows/test.yml"
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: brew install (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: Homebrew/actions/setup-homebrew@main
+
+      - name: brew install --build-from-source
+        run: brew install --build-from-source --verbose dcode
+
+      - name: brew test
+        run: brew test --verbose dcode
