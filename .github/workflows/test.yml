@@ -25,9 +25,6 @@ jobs:
 
       - uses: Homebrew/actions/setup-homebrew@main
 
-      - name: Tap this checkout as a local tap
-        run: brew tap pokryfka/dcode "${GITHUB_WORKSPACE}"
-
       - name: brew install --build-from-source
         run: brew install --build-from-source --verbose dcode
 
